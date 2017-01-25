@@ -1,5 +1,5 @@
 var React = require('react');
-var Promt = require('../components/Prompt');
+var Prompt = require('../components/Prompt');
 
 var PromptContainer = React.createClass({
 
