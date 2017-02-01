@@ -1,7 +1,7 @@
-var React = require('react');
-var ConfirmBattle = require('../components/ConfirmBattle');
+let React = require('react');
+let ConfirmBattle = require('../components/ConfirmBattle');
 
-var ConfirmBattleContainer = React.createClass({
+let ConfirmBattleContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
