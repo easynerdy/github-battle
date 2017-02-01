@@ -1,4 +1,4 @@
-var React = require('React');
+const React = require('React');
 
 function ConfirmBattle (props) {
   return props.isLoading === true
