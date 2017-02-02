@@ -1,6 +1,6 @@
 let React = require('react');
 let ConfirmBattle = require('../components/ConfirmBattle');
-var githubHelpers = require('../utils/githubHelpers');
+let githubHelpers = require('../utils/githubHelpers');
 
 let ConfirmBattleContainer = React.createClass({
   contextTypes: {
