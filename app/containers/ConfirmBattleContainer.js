@@ -1,6 +1,6 @@
 let React = require('react');
 let ConfirmBattle = require('../components/ConfirmBattle');
-let githubHelpers = require('../utils/githubHelpers');
+var githubHelpers = require('../utils/githubHelpers');
 
 let ConfirmBattleContainer = React.createClass({
   contextTypes: {
@@ -16,9 +16,20 @@ let ConfirmBattleContainer = React.createClass({
 
   componentDidMount : function() {
     var query = this.props.location.query;
-    //console.log('we made it to componentDidMount');
-    githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo]);
-    //returns an array of github data
+    //takes an array and returns a promise for an array of data
+    console.log('COMPONENTDIDMOUNT', this.props.location.query);
+    githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+      .then(function (players) {
+        console.log('PLAYERS: ', players);
+        //this.setState({
+          //isLoading: false,
+          //playersInfo: [players[0], players[1]]
+        //})
+
+      }) //end then
+      .catch(function(err) {
+        console.warn('Error in componentDidMount', err);
+      }) //end catch
   },
 
   render: function() {
