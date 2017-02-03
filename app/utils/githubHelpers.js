@@ -14,16 +14,17 @@ let helpers = {
 
   // takes an array and returns an array of api data as a promise
   getPlayersInfo : function (players) {
-    return axios.all(players.map( //for each player, get data
+    //for each player, getUserInfo which returns a promise
+    return axios.all(players.map(
         function (username) {
             return getUserInfo(username)
-        }) // end map gives an array
+        })
       // on .all promise of all players' data, then...
       ).then(function (info) {
-        //return an array of player data as a promise
+        //then return an array of players data as a promise
         return info.map(function (user) {
             return user.data;
-          }) //end map
+          }) //end info.map
       }).catch(function(err) {
         console.warn('Error in getPlayersInfo', err);
       }) //end catch
